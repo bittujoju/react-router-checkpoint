@@ -19,6 +19,10 @@ class Login extends Component {
     email: '',
     password: ''
   }
+  submitLogin = e => {
+    e.preventDefault()
+    this.props.userLogin(this.state, this.props.history)
+  }
 
   render() {
     return (
@@ -32,7 +36,7 @@ class Login extends Component {
               boxShadow: '3px 3px 47px 0px rgba(0,0,0,0.5)'
             }}
           >
-            <Form>
+            <Form onSubmit={this.submitLogin}>
               <FormGroup>
                 <Label for="email-field">Email</Label>
                 <Input

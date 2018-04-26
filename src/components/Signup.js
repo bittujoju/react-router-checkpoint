@@ -37,7 +37,7 @@ export class Signup extends Component {
     } else {
       let newUser = {name, email, company, phone, password, address}
       console.log('newUser', newUser)
-      this.props.userSignup(newUser)
+      this.props.userSignup(newUser, this.props.history)
     }
   }
 
